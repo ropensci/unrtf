@@ -19,7 +19,7 @@ unrtf <- function(file = NULL, format = c("html", "text", "latex"), verbose = FA
   args <- if(length(file)){
     if(grepl("^https?://", file)){
       tmp <- tempfile(fileext = ".rtf")
-      utils::download.file(file, tmp, mode = "wb")
+      utils::download.file(file, tmp, mode = "wb", quiet = !verbose)
       file <- tmp
     }
     file <- normalizePath(file, mustWork = TRUE)
@@ -27,9 +27,9 @@ unrtf <- function(file = NULL, format = c("html", "text", "latex"), verbose = FA
     c(
       if(verbose) 
         "--verbose",
-      paste0("--", format),
       if(length(conf_dir))
-        paste("-P", conf_dir),
+        c("-P", normalizePath(conf_dir, mustWork = TRUE)),
+      paste0("--", format),
       ifelse(is_windows(), shQuote(file), file)
     )
   }
@@ -47,6 +47,8 @@ unrtf <- function(file = NULL, format = c("html", "text", "latex"), verbose = FA
   path <- file.path(bindir, paste0("unrtf", postfix))
   outcon <- rawConnection(raw(0), "r+")
   on.exit(close(outcon), add = TRUE)
+  if(verbose)
+    cat(sprintf("Calling: %s %s\n", path, paste(args, collapse = " ")), file = stderr())
   status <- sys::exec_wait(path, args, std_out = outcon)
   if(status != 0)
     stop("System call to 'unrtf' failed", call. = FALSE)
