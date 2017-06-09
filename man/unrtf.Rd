@@ -19,6 +19,6 @@ because unrtf has limited support for converting between character encodings.
 }
 \examples{
 library(unrtf)
-text <- unrtf("http://www-igm.univ-mlv.fr/~mac/ENS/01-projets/XMLV/pelleas/exemples/Sample.rtf")
+text <- unrtf("https://jeroen.github.io/files/sample.rtf")
 cat(text)
 }

@@ -8,7 +8,7 @@
 #' @param format output format, must be "text", "html" or "latex"
 #' @param verbose print some output to stderr
 #' @examples library(unrtf)
-#' text <- unrtf("http://www-igm.univ-mlv.fr/~mac/ENS/01-projets/XMLV/pelleas/exemples/Sample.rtf")
+#' text <- unrtf("https://jeroen.github.io/files/sample.rtf")
 #' cat(text)
 unrtf <- function(file = NULL, format = c("html", "text", "latex"), verbose = FALSE){
   format <- match.arg(format)

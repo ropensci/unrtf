@@ -23,6 +23,7 @@ file path or a URL to a word document:
 
 ```r
 library(unrtf)
-text <- unrtf("http://www-igm.univ-mlv.fr/~mac/ENS/01-projets/XMLV/pelleas/exemples/Sample.rtf")
+text <- unrtf("https://jeroen.github.io/files/sample.rtf", format = "text")
+html <- unrtf("https://jeroen.github.io/files/sample.rtf", format = "html")
 cat(text)
 ```

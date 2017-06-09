@@ -66,7 +66,7 @@
 uint32_t ntohl(uint32_t const net);
 #else
 uint32_t ntohl(uint32_t const net) {
-  uint8_t data[4] = {};
+  uint8_t data[4] = {0};
   memcpy(&data, &net, sizeof(data));
   
   return ((uint32_t) data[3] << 0)
