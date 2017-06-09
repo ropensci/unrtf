@@ -107,6 +107,23 @@
 #include <string.h>
 #endif
 
+/* Workaround by Jeroen for Solaris 10 */
+#if defined(sun) || defined(__sun)
+char *strcasestr(const char *haystack, const char *needle){
+  size_t hay_len = strlen(haystack);
+  size_t needle_len = strlen(needle);
+  while (hay_len >= needle_len) {
+    if (strncasecmp(haystack, needle, needle_len) == 0)
+      return (char *) haystack;
+    
+    haystack++;
+    hay_len--;
+  }
+  
+  return NULL;
+}
+#endif
+
 #include <errno.h>
 
 #include "defs.h"
