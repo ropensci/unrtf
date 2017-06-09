@@ -1,7 +1,8 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^inst$
+\.o$
+\.exe$
 ^src/unrtf
-^src/unrtf.exe$
 ^appveyor\.yml$
 ^.travis.yml$

@@ -60,9 +60,21 @@
 
 #ifndef _WIN32
 #include <arpa/inet.h>
+#else
+#include "stdint.h"
+#ifndef _WIN64
+uint32_t ntohl(uint32_t const net) {
+  uint8_t data[4] = {};
+  memcpy(&data, &net, sizeof(data));
+  
+  return ((uint32_t) data[3] << 0)
+    | ((uint32_t) data[2] << 8)
+    | ((uint32_t) data[1] << 16)
+    | ((uint32_t) data[0] << 24);
+}
+#endif
 #endif
 
-#include "stdint.h"
 #include "malloc.h"
 #include "defs.h"
 #include "error.h"

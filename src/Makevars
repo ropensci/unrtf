@@ -8,7 +8,7 @@ LIBUNRTF = \
 
 # Link iconv only on OSX
 LIBICONVHACK = $(subst -framework,-liconv -framework,$(FOUNDATION_LIBS))
-WINICONVHACK = $(subst 64,$(LIBR) -lRiconv -lws2_32,$(subst 32,64,$(WIN)))
+WINICONVHACK = $(subst 64,-lws2_32 $(LIBR) -lRiconv,$(subst 32,64,$(WIN)))
 
 all: clean unrtf
 
