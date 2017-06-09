@@ -1,0 +1,7 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^inst$
+^src/unrtf
+^src/unrtf.exe$
+^appveyor\.yml$
+^.travis.yml$

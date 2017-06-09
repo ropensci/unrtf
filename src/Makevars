@@ -1,0 +1,18 @@
+INSTDIR=../inst
+PKG_CPPFLAGS = -Ilibunrtf -DHAVE_CONFIG_H -DPKGDATADIR=\"../share\"
+
+LIBUNRTF = \
+	libunrtf/attr.o libunrtf/convert.o libunrtf/error.o libunrtf/hash.o libunrtf/main.o \
+	libunrtf/malloc.o	libunrtf/my_iconv.o libunrtf/output.o libunrtf/parse.o libunrtf/path.o \
+	libunrtf/unicode.o libunrtf/user.o libunrtf/util.o libunrtf/word.o
+
+all: clean unrtf
+
+unrtf: $(LIBUNRTF)
+	$(CC) $(CPPFLAGS) $(CFLAGS) -o unrtf$(WIN) $(LIBUNRTF) -liconv
+	mkdir -p $(INSTDIR)/bin
+	cp -f unrtf$(WIN) $(INSTDIR)/bin/
+	cp -Rf share $(INSTDIR)/
+
+clean:
+	rm -f $(LIBUNRTF) unrtf
