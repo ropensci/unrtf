@@ -2,9 +2,10 @@
 % Please edit documentation in R/unrtf.R
 \name{unrtf}
 \alias{unrtf}
-\title{Convert rtf}
+\title{Convert rtf Documents}
 \usage{
-unrtf(file = NULL, format = c("html", "text", "latex"), verbose = FALSE)
+unrtf(file = NULL, format = c("html", "text", "latex"), verbose = FALSE,
+  conf_dir = NULL)
 }
 \arguments{
 \item{file}{path or url to the 'rtf' file}
@@ -12,13 +13,18 @@ unrtf(file = NULL, format = c("html", "text", "latex"), verbose = FALSE)
 \item{format}{output format, must be "text", "html" or "latex"}
 
 \item{verbose}{print some output to stderr}
+
+\item{conf_dir}{use a custom dir with \code{.conf} files which serve as output templates.
+The defaults conf files are located in \code{system.file("share", package = "unrtf")}.}
 }
 \description{
-Converts an rtf document to html, text or latex. Note that html output is recommended 
-because unrtf has limited support for converting between character encodings.
+Converts an rtf document to html, text or latex. Output in html is recommended
+because \code{unrtf} has limited support for converting between character encodings
+which is problematic for non-ascii text.
 }
 \examples{
 library(unrtf)
-text <- unrtf("https://jeroen.github.io/files/sample.rtf")
+text <- unrtf("https://jeroen.github.io/files/sample.rtf", format = "text")
+html <- unrtf("https://jeroen.github.io/files/sample.rtf", format = "html")
 cat(text)
 }

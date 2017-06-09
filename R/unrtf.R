@@ -1,16 +1,20 @@
-#' Convert rtf
+#' Convert rtf Documents
 #'
-#' Converts an rtf document to html, text or latex. Note that html output is recommended 
-#' because unrtf has limited support for converting between character encodings.
+#' Converts an rtf document to html, text or latex. Output in html is recommended 
+#' because `unrtf` has limited support for converting between character encodings
+#' which is problematic for non-ascii text.
 #'
 #' @export
 #' @param file path or url to the 'rtf' file
 #' @param format output format, must be "text", "html" or "latex"
 #' @param verbose print some output to stderr
+#' @param conf_dir use a custom dir with `.conf` files which serve as output templates. 
+#' The defaults conf files are located in `system.file("share", package = "unrtf")`.
 #' @examples library(unrtf)
-#' text <- unrtf("https://jeroen.github.io/files/sample.rtf")
+#' text <- unrtf("https://jeroen.github.io/files/sample.rtf", format = "text")
+#' html <- unrtf("https://jeroen.github.io/files/sample.rtf", format = "html")
 #' cat(text)
-unrtf <- function(file = NULL, format = c("html", "text", "latex"), verbose = FALSE){
+unrtf <- function(file = NULL, format = c("html", "text", "latex"), verbose = FALSE, conf_dir = NULL){
   format <- match.arg(format)
   args <- if(length(file)){
     if(grepl("^https?://", file)){
@@ -21,8 +25,11 @@ unrtf <- function(file = NULL, format = c("html", "text", "latex"), verbose = FA
     file <- normalizePath(file, mustWork = TRUE)
     # Path with spaces need shQuote() on Windows, see https://github.com/jeroen/sys/issues/4
     c(
-      if(verbose) "--verbose",
+      if(verbose) 
+        "--verbose",
       paste0("--", format),
+      if(length(conf_dir))
+        paste("-P", conf_dir),
       ifelse(is_windows(), shQuote(file), file)
     )
   }
