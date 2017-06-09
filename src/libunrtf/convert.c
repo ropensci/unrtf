@@ -103,7 +103,9 @@
 
 #ifdef HAVE_STRING_H
 /* For strcasestr() */
+#ifndef __USE_GNU
 #define __USE_GNU 
+#endif
 #include <string.h>
 #endif
 
