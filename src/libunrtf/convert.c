@@ -108,7 +108,7 @@
 #endif
 
 /* Workaround by Jeroen for Solaris 10 */
-#if defined(sun) || defined(__sun)
+#if defined(sun) || defined(__sun) || defined(_WIN32)
 char *strcasestr(const char *haystack, const char *needle){
   size_t hay_len = strlen(haystack);
   size_t needle_len = strlen(needle);

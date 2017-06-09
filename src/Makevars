@@ -8,11 +8,12 @@ LIBUNRTF = \
 
 # Link iconv only on OSX
 LIBICONVHACK = $(subst -framework,-liconv -framework,$(FOUNDATION_LIBS))
+WINICONVHACK = $(subst 64,$(LIBR) -lRiconv -lws2_32,$(subst 32,64,$(WIN)))
 
 all: clean unrtf
 
-unrtf: $(LIBUNRTF)
-	$(MAIN_LD) $(CFLAGS) -o unrtf$(WIN) $(LIBUNRTF) $(LIBICONVHACK)
+unrtf: $(LIBUNRTF) 
+	$(CC) $(CFLAGS) -o unrtf$(WIN) $(LIBUNRTF) $(LIBICONVHACK) $(WINICONVHACK) 
 	mkdir -p $(INSTDIR)/bin
 	cp -f unrtf$(WIN) $(INSTDIR)/bin/
 	cp -Rf share $(INSTDIR)/

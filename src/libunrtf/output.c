@@ -58,8 +58,11 @@
 #include <string.h>
 #endif
 
+#ifndef _WIN32
 #include <arpa/inet.h>
+#endif
 
+#include "stdint.h"
 #include "malloc.h"
 #include "defs.h"
 #include "error.h"
