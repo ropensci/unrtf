@@ -1,6 +1,7 @@
 #' Convert rtf
 #'
-#' Converts a document in 'rtf' format to other formats
+#' Converts an rtf document to html, text or latex. Note that html output is recommended 
+#' because unrtf has limited support for converting between character encodings.
 #'
 #' @export
 #' @param file path or url to the 'rtf' file
@@ -9,7 +10,7 @@
 #' @examples library(unrtf)
 #' text <- unrtf("http://www-igm.univ-mlv.fr/~mac/ENS/01-projets/XMLV/pelleas/exemples/Sample.rtf")
 #' cat(text)
-unrtf <- function(file = NULL, format = c("text", "html", "latex"), verbose = FALSE){
+unrtf <- function(file = NULL, format = c("html", "text", "latex"), verbose = FALSE){
   format <- match.arg(format)
   args <- if(length(file)){
     if(grepl("^https?://", file)){

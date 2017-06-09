@@ -4,7 +4,7 @@
 \alias{unrtf}
 \title{Convert rtf}
 \usage{
-unrtf(file = NULL, format = c("text", "html", "latex"), verbose = FALSE)
+unrtf(file = NULL, format = c("html", "text", "latex"), verbose = FALSE)
 }
 \arguments{
 \item{file}{path or url to the 'rtf' file}
@@ -14,7 +14,8 @@ unrtf(file = NULL, format = c("text", "html", "latex"), verbose = FALSE)
 \item{verbose}{print some output to stderr}
 }
 \description{
-Converts a document in 'rtf' format to other formats
+Converts an rtf document to html, text or latex. Note that html output is recommended 
+because unrtf has limited support for converting between character encodings.
 }
 \examples{
 library(unrtf)

@@ -1,11 +1,13 @@
 Package: unrtf
 Type: Package
 Title: Extract Text from Rich Text Format (rtf) Documents
-Version: 0.9000
+Version: 1.0
 Authors@R: c(
     person("Jeroen", "Ooms", ,"jeroen@berkeley.edu", role = c("aut", "cre")),
     person("Free Software Foundation, Inc", role = "cph"))
-Description: Wraps the 'unrtf' utility to extract text from rtf files.
+Description: Wraps the 'unrtf' utility to extract text from rtf files. Supports
+    document conversion to html, latex or plain text. Output in html is recommended
+    because 'unrtf' has limited support for converting between character encodings.
 License: GPL-3
 Encoding: UTF-8
 Imports: sys

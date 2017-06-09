@@ -6,3 +6,4 @@
 ^src/unrtf
 ^appveyor\.yml$
 ^.travis.yml$
+^readme.md$
