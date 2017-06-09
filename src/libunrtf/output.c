@@ -62,7 +62,9 @@
 #include <arpa/inet.h>
 #else
 #include "stdint.h"
-#ifndef _WIN64
+#ifdef _WIN64
+uint32_t ntohl(uint32_t const net);
+#else
 uint32_t ntohl(uint32_t const net) {
   uint8_t data[4] = {};
   memcpy(&data, &net, sizeof(data));
