@@ -42,7 +42,11 @@ unrtf <- function(file = NULL, format = c("text", "html", "latex"), verbose = FA
   status <- sys::exec_wait(path, args, std_out = outcon)
   if(status != 0)
     stop("System call to 'unrtf' failed", call. = FALSE)
-  rawToChar(rawConnectionValue(outcon))
+  
+  # Unclear what encoding 'unrtf' uses. The html output is simply escaped.
+  out <- rawToChar(rawConnectionValue(outcon))
+  Encoding(out) <- "latin1"
+  enc2utf8(out)
 }
 
 is_windows <- function(){
