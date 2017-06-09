@@ -25,8 +25,13 @@ unrtf <- function(file = NULL, format = c("text", "html", "latex"), verbose = FA
       ifelse(is_windows(), shQuote(file), file)
     )
   }
+  if(is_windows()){
+    old_path <- Sys.getenv("PATH")
+    on.exit(Sys.setenv(PATH = old_path), add = TRUE)
+    Sys.setenv(PATH = paste(R.home("bin"), old_path, sep = ";"))
+  }
   wd <- getwd()
-  on.exit(setwd(wd))
+  on.exit(setwd(wd), add = TRUE)
   bindir <- system.file("bin", package = "unrtf")
   sharedir <- system.file("share", package = "unrtf")
   setwd(bindir)

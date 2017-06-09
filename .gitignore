@@ -7,6 +7,7 @@ src/*/*.o
 src/*.so
 src/*.dll
 src/*.a
+src/*.exe
 src/*.def
 src/unrtf.exe
 src/unrtf
