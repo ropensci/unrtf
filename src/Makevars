@@ -9,7 +9,7 @@ LIBUNRTF = \
 all: clean unrtf
 
 unrtf: $(LIBUNRTF)
-	$(CC) $(CPPFLAGS) $(CFLAGS) -o unrtf$(WIN) $(LIBUNRTF) -liconv
+	$(MAIN_LD) $(CFLAGS) -Wl,-undefined,dynamic_lookup -o unrtf$(WIN) $(LIBUNRTF) $(LIBR)
 	mkdir -p $(INSTDIR)/bin
 	cp -f unrtf$(WIN) $(INSTDIR)/bin/
 	cp -Rf share $(INSTDIR)/
