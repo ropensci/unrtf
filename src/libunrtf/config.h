@@ -1,6 +1,11 @@
 /* config.h.  Generated from config.h.in by configure.  */
 /* config.h.in.  Generated from configure.ac by autoheader.  */
 
+/* Added by Jeroen for strcasestr() on Solaris */
+#ifndef _GNU_SOURCE
+#define _GNU_SOURCE
+#endif
+
 /* Define to 1 if you have the <ctype.h> header file. */
 #define HAVE_CTYPE_H 1
 
