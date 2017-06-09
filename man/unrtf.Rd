@@ -14,13 +14,18 @@ unrtf(file = NULL, format = c("html", "text", "latex"), verbose = FALSE,
 
 \item{verbose}{print some output to stderr}
 
-\item{conf_dir}{use a custom dir with \code{.conf} files which serve as output templates.
-The defaults conf files are located in \code{system.file("share", package = "unrtf")}.}
+\item{conf_dir}{use a custom dir with \code{.conf} files which serve as output templates.}
 }
 \description{
 Converts an rtf document to html, text or latex. Output in html is recommended
 because \code{unrtf} has limited support for converting between character encodings
 which is problematic for non-ascii text.
+}
+\details{
+Output can be customized via a set of \code{.conf} files which serve as templates for
+the various formats. The default conf files are located in \code{system.file("share", package = "unrtf")}
+To modify the output, copy these files to a custom location and set pass the
+directory as the \code{conf_dir} argument in \code{unrtf}.
 }
 \examples{
 library(unrtf)

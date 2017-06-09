@@ -3,13 +3,17 @@
 #' Converts an rtf document to html, text or latex. Output in html is recommended 
 #' because `unrtf` has limited support for converting between character encodings
 #' which is problematic for non-ascii text.
+#' 
+#' Output can be customized via a set of `.conf` files which serve as templates for
+#' the various formats. The default conf files are located in `system.file("share", package = "unrtf")`
+#' To modify the output, copy these files to a custom location and set pass the 
+#' directory as the `conf_dir` argument in `unrtf`.
 #'
 #' @export
 #' @param file path or url to the 'rtf' file
 #' @param format output format, must be "text", "html" or "latex"
 #' @param verbose print some output to stderr
 #' @param conf_dir use a custom dir with `.conf` files which serve as output templates. 
-#' The defaults conf files are located in `system.file("share", package = "unrtf")`.
 #' @examples library(unrtf)
 #' text <- unrtf("https://jeroen.github.io/files/sample.rtf", format = "text")
 #' html <- unrtf("https://jeroen.github.io/files/sample.rtf", format = "html")
