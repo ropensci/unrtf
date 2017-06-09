@@ -491,7 +491,7 @@ static const int fcharsetparmtocp(int parm)
 }
 
 // Translate code page to encoding name hopefully suitable as iconv input
-static char *cptoencoding(parm)
+static char *cptoencoding(int parm)
 {
     // Note that CP0 is supposed to mean current system default, which does
     // not make any sense as a stored value, we don't handle it.
