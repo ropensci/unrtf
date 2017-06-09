@@ -6,6 +6,9 @@
 #' @param file path or url to the 'rtf' file
 #' @param format output format, must be "text", "html" or "latex"
 #' @param verbose print some output to stderr
+#' @examples library(unrtf)
+#' text <- unrtf("http://www-igm.univ-mlv.fr/~mac/ENS/01-projets/XMLV/pelleas/exemples/Sample.rtf")
+#' cat(text)
 unrtf <- function(file = NULL, format = c("text", "html", "latex"), verbose = FALSE){
   format <- match.arg(format)
   args <- if(length(file)){

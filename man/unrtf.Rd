@@ -16,3 +16,8 @@ unrtf(file = NULL, format = c("text", "html", "latex"), verbose = FALSE)
 \description{
 Converts a document in 'rtf' format to other formats
 }
+\examples{
+library(unrtf)
+text <- unrtf("http://www-igm.univ-mlv.fr/~mac/ENS/01-projets/XMLV/pelleas/exemples/Sample.rtf")
+cat(text)
+}

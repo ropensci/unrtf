@@ -8,6 +8,7 @@ LIBUNRTF = \
 
 all: clean unrtf
 
+# Note: we could replace the linker flags with -liconv on OSX
 unrtf: $(LIBUNRTF)
 	$(MAIN_LD) $(CFLAGS) -Wl,-undefined,dynamic_lookup -o unrtf$(WIN) $(LIBUNRTF) $(LIBR)
 	mkdir -p $(INSTDIR)/bin
