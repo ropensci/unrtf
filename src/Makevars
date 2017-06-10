@@ -6,17 +6,21 @@ LIBUNRTF = \
 	libunrtf/malloc.o	libunrtf/my_iconv.o libunrtf/output.o libunrtf/parse.o libunrtf/path.o \
 	libunrtf/unicode.o libunrtf/user.o libunrtf/util.o libunrtf/word.o
 
-# Link iconv only on OSX
-LIBICONVHACK = $(subst -framework,-liconv -framework,$(FOUNDATION_LIBS))
-WINICONVHACK = $(subst 64,-lws2_32 $(LIBR) -lRiconv,$(subst 32,64,$(WIN)))
+UNRTF = unrtf$(WIN)
 
-all: clean unrtf
+# On OSX we need to link iconv
+MACFLAGS = $(subst -framework,-liconv -framework,$(FOUNDATION_LIBS))
 
-unrtf: $(LIBUNRTF) 
-	$(CC) $(CFLAGS) -o unrtf$(WIN) $(LIBUNRTF) $(LIBICONVHACK) $(WINICONVHACK) 
+# On Windows we need to link Riconv and winsock
+WINFLAGS = $(subst 64,-lws2_32 $(LIBR) -lRiconv,$(subst 32,64,$(WIN)))
+
+all: clean $(UNRTF)
+
+$(UNRTF): $(LIBUNRTF) 
+	$(CC) $(CFLAGS) -o $(UNRTF) $(LIBUNRTF) $(MACFLAGS) $(WINFLAGS) 
 	mkdir -p $(INSTDIR)/bin
-	cp -f unrtf$(WIN) $(INSTDIR)/bin/
+	cp -f $(UNRTF) $(INSTDIR)/bin/
 	cp -Rf share $(INSTDIR)/
 
 clean:
-	rm -f $(LIBUNRTF) unrtf
+	rm -Rf $(LIBUNRTF) $(INSTDIR) $(OBJECTS) $(SHLIB) $(UNRTF)
