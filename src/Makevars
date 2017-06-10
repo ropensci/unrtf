@@ -23,4 +23,4 @@ $(UNRTF): $(LIBUNRTF)
 	cp -Rf share $(INSTDIR)/
 
 clean:
-	rm -Rf $(LIBUNRTF) $(INSTDIR) $(OBJECTS) $(SHLIB) $(UNRTF)
+	rm -Rf $(LIBUNRTF) $(OBJECTS) $(SHLIB) $(UNRTF)
