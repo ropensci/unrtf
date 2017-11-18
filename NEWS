@@ -1,0 +1,5 @@
+1.1
+  - Replace sprintf() by snprintf() to fix a new warning in gcc-7
+
+1.0
+  - Initial CRAN release
