@@ -1394,7 +1394,7 @@ static int
 cmd_expand (Word *w, int align, char has_param, int param) {
 	char str[10];
 	if (has_param) {
-		sprintf(str, "%d", param/4);
+		snprintf(str, 10, "%d", param/4);
 		if (!param) 
 			attr_pop(ATTR_EXPAND);
 		else 
