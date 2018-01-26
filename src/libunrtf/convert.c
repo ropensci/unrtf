@@ -1392,9 +1392,9 @@ cmd_ftech (Word *w, int align, char has_param, int param) {
 
 static int 
 cmd_expand (Word *w, int align, char has_param, int param) {
-	char str[10];
+	char str[11];
 	if (has_param) {
-		snprintf(str, 10, "%d", param/4);
+		snprintf(str, 11, "%d", param/4);
 		if (!param) 
 			attr_pop(ATTR_EXPAND);
 		else 
