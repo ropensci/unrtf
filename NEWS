@@ -1,3 +1,6 @@
+1.2
+  - Fix format-truncation warning in GCC-7
+  
 1.1
   - Replace sprintf() by snprintf() to fix a new warning in gcc-7
 
