@@ -1,3 +1,6 @@
+1.3
+  - Fix for sys 2.0 (do not quote arg on Windows)
+
 1.2
   - Fix format-truncation warning in GCC-7
   

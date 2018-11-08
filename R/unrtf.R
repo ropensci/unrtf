@@ -33,8 +33,7 @@ unrtf <- function(file = NULL, format = c("html", "text", "latex"), verbose = FA
         "--verbose",
       if(length(conf_dir))
         c("-P", normalizePath(conf_dir, mustWork = TRUE)),
-      paste0("--", format),
-      ifelse(is_windows(), shQuote(file), file)
+      paste0("--", format), file
     )
   }
   if(is_windows()){
