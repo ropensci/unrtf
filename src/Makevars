@@ -8,16 +8,13 @@ LIBUNRTF = \
 
 UNRTF = unrtf$(WIN)
 
-# On OSX we need to link iconv
-MACFLAGS = $(subst -framework,-liconv -framework,$(FOUNDATION_LIBS))
-
 # On Windows we need to link Riconv and winsock
 WINFLAGS = $(subst 64,-lws2_32 $(LIBR) -lRiconv,$(subst 32,64,$(WIN)))
 
 all: clean $(UNRTF)
 
 $(UNRTF): $(LIBUNRTF) 
-	$(CC) $(CFLAGS) -o $(UNRTF) $(LIBUNRTF) $(MACFLAGS) $(WINFLAGS) 
+	$(CC) $(CFLAGS) -o $(UNRTF) $(LIBUNRTF) $(MACFLAGS) $(WINFLAGS) $(LIBS)
 	mkdir -p $(INSTDIR)/bin
 	cp -f $(UNRTF) $(INSTDIR)/bin/
 	cp -Rf share $(INSTDIR)/
