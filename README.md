@@ -13,8 +13,8 @@ Wraps the [unrtf](https://www.gnu.org/software/unrtf/) utility to extract text f
 
 ## Installation
 
-```
-devtools::install_github("ropensci/unrtf")
+```r
+install.packages("unrtf")
 ```
 
 ## Hello World
@@ -27,4 +27,27 @@ library(unrtf)
 text <- unrtf("https://jeroen.github.io/files/sample.rtf", format = "text")
 html <- unrtf("https://jeroen.github.io/files/sample.rtf", format = "html")
 cat(text)
+```
+
+```
+###  Translation from RTF performed by UnRTF, version 0.21.9 
+### font table contains 11 fonts total
+
+TITLE: It is an example test rtf-file to RTF2XML bean for testing
+
+AUTHOR: kissj
+### creation date: 17 April 2000 15:34 
+### revision date: 19 April 2000 09:34 
+### total pages: 2
+### total words: 217
+### total chars: 1240
+
+-----------------
+It is an example test rtf-file to RTF2XML bean for testing
+
+Font size 10, plain text;
+Font size 12, bold text. Underline,bold text.
+ Underline,italic,bold text. 
+Font size 22, plain text.
+ Bold text.
 ```
