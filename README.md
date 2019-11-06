@@ -1,4 +1,4 @@
-# unrtf
+# rOpenSci: The *unrtf* package <img src="hexlogo.png" align="right" height="134.5" />
 
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
 [![Build Status](https://travis-ci.org/ropensci/unrtf.svg?branch=master)](https://travis-ci.org/ropensci/unrtf)
@@ -51,3 +51,4 @@ Font size 12, bold text. Underline,bold text.
 Font size 22, plain text.
  Bold text.
 ```
+
