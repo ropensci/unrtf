@@ -1,3 +1,6 @@
+1.4
+  - Fix compiler warning on Windows GCC 8 
+  
 1.3
   - Fix for sys 2.0 (do not quote arg on Windows)
   - Link unrtf executable with $(LIBS) hopefully fixes Solaris
