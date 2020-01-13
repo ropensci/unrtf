@@ -1,7 +1,7 @@
 Package: unrtf
 Type: Package
 Title: Extract Text from Rich Text Format (RTF) Documents
-Version: 1.3
+Version: 1.4
 Authors@R: c(
     person("Jeroen", "Ooms", ,"jeroen@berkeley.edu", role = c("aut", "cre")),
     person("Free Software Foundation, Inc", role = "cph"))
@@ -11,8 +11,9 @@ Description: Wraps the 'unrtf' utility to extract text from RTF files. Supports
 License: GPL-3
 Encoding: UTF-8
 Imports: sys (>= 2.0)
-URL: https://docs.ropensci.org/unrtf, https://github.com/ropensci/unrtf#readme (devel) 
+URL: https://docs.ropensci.org/unrtf,
+    https://github.com/ropensci/unrtf#readme (devel) 
     https://www.gnu.org/software/unrtf/ (upstream)
 BugReports: http://github.com/ropensci/unrtf/issues
-RoxygenNote: 6.0.1
+RoxygenNote: 7.0.2
 Roxygen: list(markdown = TRUE)

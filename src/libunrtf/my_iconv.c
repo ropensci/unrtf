@@ -24,6 +24,12 @@
 
 extern int verbose_mode;
 
+#ifdef _WIN32
+#define ICONV_CONST (const char**)
+#else
+#define ICONV_CONST
+#endif
+
 /* Convert from charmap file entry to charmap table one. 
    1st byte in table entry is code length 
 */
@@ -53,7 +59,7 @@ get_code_str(FILE *f, iconv_t desc)
 		return NULL;
 	icp = utf8;
 	ocp0 = ocp = obuf + 1;
-	if (iconv(desc, &icp, &ibytes, &ocp, &obytes) == -1) {
+	if (iconv(desc, ICONV_CONST &icp, &ibytes, &ocp, &obytes) == -1) {
 		/*        fprintf(stderr, "unrtf: my_iconv: iconv error\n");*/
 		return NULL;
 	}
@@ -146,7 +152,7 @@ my_iconv(my_iconv_t cd, char **inbuf, size_t *inbytesleft, char **outbuf, size_t
 	}
 	}
 	else
-		result = iconv(cd.desc, inbuf, inbytesleft, outbuf, outbytesleft);
+		result = iconv(cd.desc, ICONV_CONST inbuf, inbytesleft, outbuf, outbytesleft);
 
 	return result;
 }
