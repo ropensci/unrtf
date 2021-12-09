@@ -1,5 +1,5 @@
 INSTDIR=../inst
-PKG_CPPFLAGS = -Ilibunrtf -DHAVE_CONFIG_H -DPKGDATADIR=\"../share\"
+PKG_CPPFLAGS = -Ilibunrtf -DHAVE_CONFIG_H -DPKGDATADIR=\"../share\" -D__USE_MINGW_ACCESS
 
 LIBUNRTF = \
 	libunrtf/attr.o libunrtf/convert.o libunrtf/error.o libunrtf/hash.o libunrtf/main.o \
