@@ -14,6 +14,6 @@ Imports: sys (>= 2.0)
 URL: https://docs.ropensci.org/unrtf/,
     https://github.com/ropensci/unrtf (devel) 
     https://www.gnu.org/software/unrtf/ (upstream)
-BugReports: http://github.com/ropensci/unrtf/issues
+BugReports: https://github.com/ropensci/unrtf/issues
 RoxygenNote: 7.0.2
 Roxygen: list(markdown = TRUE)
