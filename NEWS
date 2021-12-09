@@ -1,3 +1,6 @@
+1.4.1
+  - Apply patch by TK to use __USE_MINGW_ACCESS
+
 1.4
   - Fix compiler warning on Windows GCC 8 
   
