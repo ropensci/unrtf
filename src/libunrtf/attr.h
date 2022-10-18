@@ -82,20 +82,20 @@ void free_collection(Collection *c);
 
 extern void attr_push(int attr, char* param);
 
-extern void attrstack_push();
-extern void attrstack_drop();
-extern void attrstack_express_all();
+extern void attrstack_push(void);
+extern void attrstack_drop(void);
+extern void attrstack_express_all(void);
 
 extern int attr_find_pop(int findattr);
 extern int attr_pop(int attr);
 
-extern int attr_read();
+extern int attr_read(void);
 
-extern void attr_drop_all ();
+extern void attr_drop_all (void);
 
-extern void attr_pop_all();
+extern void attr_pop_all(void);
 
-extern void attr_pop_dump();
+extern void attr_pop_dump(void);
 
 char * attr_get_param(int attr);
 

@@ -162,7 +162,7 @@ static int have_printed_row_begin=FALSE;
 static int have_printed_cell_begin=FALSE;
 static int have_printed_row_end=FALSE;
 static int have_printed_cell_end=FALSE;
-static void check_for_table();
+static void check_for_table(void);
 
 
 /* Previously in word_print_core function 
@@ -219,8 +219,8 @@ static int within_header=TRUE;
 static const char *hyperlink_base = NULL;
 
 
-void starting_body();
-void starting_text();
+void starting_body(void);
+void starting_text(void);
 void print_with_special_exprs (const char *s);
 
 static int banner_printed=FALSE;
@@ -234,7 +234,7 @@ static int banner_printed=FALSE;
  *=======================================================================*/
 
 void
-print_banner () {
+print_banner (void) {
 	if (!banner_printed) {
 		if (safe_printf(0, op->comment_begin)) fprintf(stderr, TOO_MANY_ARGS, "comment_begin");
 	  	printf(" Translation from RTF performed by ");
@@ -254,7 +254,7 @@ print_banner () {
  *=======================================================================*/
 
 void
-starting_body ()
+starting_body (void)
 {
 	if (!have_printed_body) {
 		if (!inline_mode) {
@@ -376,7 +376,7 @@ static int had_ansicpg;
 static FontEntry font_table[MAX_FONTS];
 static int total_fonts=0;
 
-static void flush_iconv_input();
+static void flush_iconv_input(void);
 static void accumulate_iconv_input(int ch);
 
 static void 
@@ -388,7 +388,7 @@ set_current_encoding(char *encoding)
 }
 
 static void 
-maybeopeniconv()
+maybeopeniconv(void)
 {
     if (!my_iconv_is_valid(desc)) {
         /* This may happen if output begins without a font command */
@@ -3090,7 +3090,7 @@ enum { SMALL=0, BIG=1 };
  *=======================================================================*/
 
 static void 
-begin_table()
+begin_table(void)
 {
 	within_table=TRUE;
 	have_printed_row_begin = FALSE;
@@ -3111,7 +3111,7 @@ begin_table()
  *=======================================================================*/
 
 void 
-end_table ()
+end_table (void)
 {
 	if (within_table) {
 		if (!have_printed_cell_end) {
@@ -3137,7 +3137,7 @@ end_table ()
  * Returns:	None.
  *=======================================================================*/
 
-static void check_for_table()
+static void check_for_table(void)
 {
 	//printf("EH: %d %d", coming_pars_that_are_tabular, within_table);
 
@@ -3161,7 +3161,7 @@ static void check_for_table()
  *=======================================================================*/
 
 void 
-starting_text() {
+starting_text(void) {
 	if (within_table) {
 		if (!have_printed_row_begin) {
 			if (safe_printf(0, op->table_row_begin)) fprintf(stderr, TOO_MANY_ARGS, "table_row_begin");
@@ -3242,7 +3242,7 @@ ending_paragraph_align (int align)
 static char iconv_buffer[IIBS];
 static int iconv_cur = 0;
 static void
-flush_iconv_input()
+flush_iconv_input(void)
 {
 /*  fprintf(stderr, "flush_iconv_input: iconv_cur %d\n", iconv_cur);*/
     if (iconv_cur <= 0) {

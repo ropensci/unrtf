@@ -67,7 +67,7 @@ char *search_in_path(const char *name, char *suffix)
     return NULL;
 }
 
-int check_dirs()
+int check_dirs(void)
 {
     char *p;
     char *colon;
@@ -100,7 +100,7 @@ int check_dirs()
     return(n_path_dirs);
 }
 
-void show_dirs()
+void show_dirs(void)
 {
     struct path_dir *path_dir_p;
     if(n_path_dirs == 0) {

@@ -1,7 +1,7 @@
 Package: unrtf
 Type: Package
 Title: Extract Text from Rich Text Format (RTF) Documents
-Version: 1.4.1
+Version: 1.4.2
 Authors@R: c(
     person("Jeroen", "Ooms", ,"jeroen@berkeley.edu", role = c("aut", "cre")),
     person("Free Software Foundation, Inc", role = "cph"))

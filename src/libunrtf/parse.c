@@ -213,7 +213,7 @@ static unsigned long current_max_length = 1;
  *=======================================================================*/
 
 static int
-expand_word_buffer ()
+expand_word_buffer (void)
 {
 	char *new_ptr;
 	unsigned long old_length;

@@ -12,8 +12,8 @@ struct path_dir
         struct path_dir *next;
 };
 
-extern int   check_dirs();
-extern void  show_dirs();
+extern int   check_dirs(void);
+extern void  show_dirs(void);
 extern char *search_in_path(const char *name, char *suffix);
 
 #endif /* _PATH_H_INCLUDED_ */

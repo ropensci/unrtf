@@ -94,7 +94,7 @@ uint32_t ntohl(uint32_t const net) {
  *=======================================================================*/
 
 OutputPersonality*
-op_create ()
+op_create (void)
 {
 	OutputPersonality* new_op;
 

@@ -68,8 +68,8 @@
 #include "attr.h"
 #include "main.h"
 
-extern void starting_body();
-extern void starting_text();
+extern void starting_body(void);
+extern void starting_text(void);
 
 extern int simulate_allcaps;
 extern int simulate_smallcaps;
@@ -446,7 +446,7 @@ attrstack_unexpress_all (AttrStack *stack)
  * Returns:	None.
  *=======================================================================*/
 void 
-attrstack_push () 
+attrstack_push (void) 
 {
 	AttrStack *new_stack;
 
@@ -509,7 +509,7 @@ attr_pop (int attr)
  *=======================================================================*/
 
 int 
-attr_read() {
+attr_read(void) {
 	AttrStack *stack = stack_of_stacks_top;
 	if (!stack) {
 		warning_handler ("no stack to read attribute from");
@@ -534,7 +534,7 @@ attr_read() {
  *=======================================================================*/
 
 void 
-attr_drop_all () 
+attr_drop_all (void) 
 {
 	AttrStack *stack = stack_of_stacks_top;
 	if (!stack) {
@@ -560,7 +560,7 @@ attr_drop_all ()
  *=======================================================================*/
 
 void 
-attrstack_drop () 
+attrstack_drop (void) 
 {
 	AttrStack *stack = stack_of_stacks_top;
 	AttrStack *prev_stack;
@@ -600,7 +600,7 @@ attrstack_drop ()
  *=======================================================================*/
 
 void 
-attr_pop_all() 
+attr_pop_all(void) 
 {
 	AttrStack *stack = stack_of_stacks_top;
 	if (!stack) {
@@ -629,7 +629,7 @@ attr_pop_all()
  *=======================================================================*/
 
 void 
-attrstack_express_all() {
+attrstack_express_all(void) {
 	AttrStack *stack = stack_of_stacks_top;
 	int i;
 
@@ -660,7 +660,7 @@ attrstack_express_all() {
  *=======================================================================*/
 
 void 
-attr_pop_dump() {
+attr_pop_dump(void) {
 	AttrStack *stack = stack_of_stacks_top;
 	int i;
 

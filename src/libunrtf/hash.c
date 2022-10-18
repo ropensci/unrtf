@@ -81,7 +81,7 @@ static HashItem *hash[256];
  *=======================================================================*/
 
 unsigned long
-hash_stats ()
+hash_stats (void)
 {
 	int i;
 	unsigned long total=0;
