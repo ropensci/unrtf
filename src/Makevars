@@ -8,9 +8,6 @@ LIBUNRTF = \
 
 UNRTF = unrtf$(WIN)
 
-# On Windows we need to link Riconv and winsock
-WINFLAGS = $(subst 64,-lws2_32 $(LIBR) -lRiconv,$(subst 32,64,$(WIN)))
-
 # Workaround for MacOS R 4.0 harding pcre2
 SYSLIBS = $(subst -lpcre2-8,,$(LIBS))
 

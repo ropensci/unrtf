@@ -1,0 +1,2 @@
+WINFLAGS = -lws2_32 $(LIBR) -lRiconv
+include Makevars
