@@ -1,3 +1,6 @@
+1.4.3
+  - Refactor Makevars for Windows builds without $(WIN)
+
 1.4.2
   - Fix strict-prototypes warnings
   
