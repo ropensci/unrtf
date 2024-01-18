@@ -1,3 +1,6 @@
+1.4.4
+  - Fix to not build a dummy shlib anymore
+  
 1.4.3
   - Refactor Makevars for Windows builds without $(WIN)
 

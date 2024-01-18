@@ -20,4 +20,4 @@ $(UNRTF): $(LIBUNRTF)
 	cp -Rf share $(INSTDIR)/
 
 clean:
-	rm -Rf $(LIBUNRTF) $(OBJECTS) $(SHLIB) $(UNRTF)
+	rm -Rf $(LIBUNRTF) $(UNRTF)
