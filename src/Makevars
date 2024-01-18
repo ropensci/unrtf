@@ -6,7 +6,7 @@ LIBUNRTF = \
 	libunrtf/malloc.o	libunrtf/my_iconv.o libunrtf/output.o libunrtf/parse.o libunrtf/path.o \
 	libunrtf/unicode.o libunrtf/user.o libunrtf/util.o libunrtf/word.o
 
-UNRTF = unrtf$(WIN)
+UNRTF = unrtf
 
 # Workaround for MacOS R 4.0 harding pcre2
 SYSLIBS = $(subst -lpcre2-8,,$(LIBS))

@@ -46,8 +46,7 @@ unrtf <- function(file = NULL, format = c("html", "text", "latex"), verbose = FA
   bindir <- system.file("bin", package = "unrtf")
   sharedir <- system.file("share", package = "unrtf")
   setwd(bindir)
-  postfix <- if(is_windows()) .Machine$sizeof.pointer * 8
-  path <- file.path(bindir, paste0("unrtf", postfix))
+  path <- file.path(bindir, "unrtf")
   outcon <- rawConnection(raw(0), "r+")
   on.exit(close(outcon), add = TRUE)
   if(verbose)
