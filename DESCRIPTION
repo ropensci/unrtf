@@ -3,7 +3,7 @@ Type: Package
 Title: Extract Text from Rich Text Format (RTF) Documents
 Version: 1.4.5
 Authors@R: c(
-    person("Jeroen", "Ooms", ,"jeroen@berkeley.edu", role = c("aut", "cre")),
+    person("Jeroen", "Ooms", ,"jeroenooms@gmail.com", role = c("aut", "cre")),
     person("Free Software Foundation, Inc", role = "cph"))
 Description: Wraps the 'unrtf' utility <https://www.gnu.org/software/unrtf/> to 
     extract text from RTF files. Supports document conversion to HTML, LaTeX or
