@@ -14,10 +14,12 @@
 #' @param format output format, must be "text", "html" or "latex"
 #' @param verbose print some output to stderr
 #' @param conf_dir use a custom dir with `.conf` files which serve as output templates. 
-#' @examples library(unrtf)
+#' @examples \donttest{
+#' library(unrtf)
 #' text <- unrtf("https://jeroen.github.io/files/sample.rtf", format = "text")
 #' html <- unrtf("https://jeroen.github.io/files/sample.rtf", format = "html")
 #' cat(text)
+#' }
 unrtf <- function(file = NULL, format = c("html", "text", "latex"), verbose = FALSE, conf_dir = NULL){
   format <- match.arg(format)
   args <- if(length(file)){

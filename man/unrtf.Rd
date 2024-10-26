@@ -4,8 +4,12 @@
 \alias{unrtf}
 \title{Convert rtf Documents}
 \usage{
-unrtf(file = NULL, format = c("html", "text", "latex"), verbose = FALSE,
-  conf_dir = NULL)
+unrtf(
+  file = NULL,
+  format = c("html", "text", "latex"),
+  verbose = FALSE,
+  conf_dir = NULL
+)
 }
 \arguments{
 \item{file}{path or url to the 'rtf' file}
@@ -28,8 +32,10 @@ To modify the output, copy these files to a custom location and set pass the
 directory as the \code{conf_dir} argument in \code{unrtf}.
 }
 \examples{
+\donttest{
 library(unrtf)
 text <- unrtf("https://jeroen.github.io/files/sample.rtf", format = "text")
 html <- unrtf("https://jeroen.github.io/files/sample.rtf", format = "html")
 cat(text)
+}
 }
