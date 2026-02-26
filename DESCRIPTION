@@ -1,7 +1,7 @@
 Package: unrtf
 Type: Package
 Title: Extract Text from Rich Text Format (RTF) Documents
-Version: 1.4.7
+Version: 1.4.8
 Authors@R: c(
     person("Jeroen", "Ooms", ,"jeroenooms@gmail.com", role = c("aut", "cre")),
     person("Free Software Foundation, Inc", role = "cph"))
@@ -15,5 +15,5 @@ Imports: sys (>= 2.0)
 URL: https://docs.ropensci.org/unrtf/
     https://ropensci.r-universe.dev/unrtf
 BugReports: https://github.com/ropensci/unrtf/issues
-RoxygenNote: 7.0.2
+RoxygenNote: 7.3.3
 Roxygen: list(markdown = TRUE)

@@ -11,7 +11,7 @@ UNRTF = unrtf
 # Workaround for MacOS R 4.0 harding pcre2
 SYSLIBS = $(subst -lpcre2-8,,$(LIBS))
 
-all: clean $(UNRTF)
+all: printcc $(UNRTF)
 
 $(UNRTF): $(LIBUNRTF) 
 	$(CC) $(CFLAGS) -o $(UNRTF) $(LIBUNRTF) $(MACFLAGS) $(WINFLAGS) $(SYSLIBS)
@@ -21,3 +21,6 @@ $(UNRTF): $(LIBUNRTF)
 
 clean:
 	rm -Rf $(LIBUNRTF) $(UNRTF)
+
+printcc:
+	 @echo "using C compiler: '`$(CC) --version | head -1`'" || true
